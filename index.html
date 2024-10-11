@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circle and Rectangle Overlap</title>
+    <title>Circle and Rectangle with Borders</title>
     <style>
         body {
             display: flex;
@@ -19,6 +19,7 @@
             width: 200px;
             height: 100px;
             background-color: #4CAF50; /* Green */
+            border: 2px solid #000; /* Black border */
             position: relative;
             z-index: 1;
         }
@@ -28,9 +29,10 @@
             height: 100px;
             background-color: #FF5722; /* Orange */
             border-radius: 50%;
+            border: 2px solid red; /* Red border */
             position: absolute;
-            top: 40px; /* Overlap adjustment */
-            left: 100px; /* Overlap adjustment */
+            top: 40px; 
+            left: 100px; 
             z-index: 2;
         }
     </style>
@@ -40,3 +42,4 @@
     <div class="circle"></div>
 </body>
 </html>
+
