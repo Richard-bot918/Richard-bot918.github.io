@@ -51,14 +51,15 @@
 
     .footer {
       grid-area: footer;
-      display: flex;
+      display: grid;
       gap: 10px;
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
     }
 
     .footer > div {
       background-color: #E0E0E0; /* Light gray */
-      flex: 1;
-      height: 50px;
+      width: 100%; /* Full width of the grid cell */
+      aspect-ratio: 1; /* Makes it a square */
     }
 
     /* Media query for larger screens (layout b) */
@@ -81,11 +82,12 @@
       }
 
       .footer {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(4, 1fr); /* Single row with 4 columns */
       }
 
       .footer > div {
-        flex: 0 1 calc(25% - 10px); /* Four boxes evenly spaced */
+        aspect-ratio: auto; /* Remove square constraint for larger screens */
+        height: 50px; /* Consistent height for all boxes */
       }
     }
   </style>
@@ -103,10 +105,6 @@
       <div></div>
       <div></div>
       <div></div>
-    </div>
-  </div>
-</body>
-</html>
     </div>
   </div>
 </body>
