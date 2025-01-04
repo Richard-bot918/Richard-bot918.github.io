@@ -4,19 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Layout</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #87CEFA; /* Light blue */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header"
+        "content"
+        "footer";
+      gap: 10px;
+      background-color: white;
+      padding: 10px;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      grid-area: header;
+      background-color: #ADFF2F; /* Greenish */
+      height: 100px;
+    }
+
+    .content {
+      grid-area: content;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .content > div {
+      background-color: #00CED1; /* Turquoise */
+      height: 80px;
+    }
+
+    .footer {
+      grid-area: footer;
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer > div {
+      background-color: #E0E0E0; /* Light gray */
+      flex: 1;
+      height: 50px;
+    }
+
+    /* Media query for larger screens (layout b) */
+    @media (min-width: 480px) {
+      .container {
+        grid-template-areas:
+          "header header"
+          "content content"
+          "footer footer";
+      }
+
+      .content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .content > div {
+        flex: 1;
+        height: 100px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <div class="header"></div>
     <div class="content">
-      <div class="item"></div>
-      <div class="item"></div>
-      <div class="item"></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
     <div class="footer">
-      <div class="footer-item"></div>
-      <div class="footer-item"></div>
+      <div></div>
+      <div></div>
     </div>
   </div>
 </body>
