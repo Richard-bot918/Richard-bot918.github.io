@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f8ff;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Circle Calculator</h1>
+    <p>Enter the radius of the circle:</p>
+    <input type="number" id="radius" placeholder="Enter radius" />
+    <br>
+    <button onclick="calcCircumference()">Calculate Circumference</button>
+    <button onclick="calcArea()">Calculate Area</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    // Function to calculate the circumference of a circle
+    function calcCircumference() {
+      const radius = parseFloat(document.getElementById('radius').value);
+      if (isNaN(radius) || radius <= 0) {
+        document.getElementById('result').innerHTML = "Please enter a valid radius.";
+        return;
+      }
+      const circumference = 2 * Math.PI * radius;
+      document.getElementById('result').innerHTML = `The circumference is: ${circumference.toFixed(2)}`;
+    }
+
+    // Function to calculate the area of a circle
+    function calcArea() {
+      const radius = parseFloat(document.getElementById('radius').value);
+      if (isNaN(radius) || radius <= 0) {
+        document.getElementById('result').innerHTML = "Please enter a valid radius.";
+        return;
+      }
+      const area = Math.PI * Math.pow(radius, 2);
+      document.getElementById('result').innerHTML = `The area is: ${area.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
